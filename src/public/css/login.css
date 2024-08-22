@@ -1,0 +1,79 @@
+.login_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.login_inner {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+/* タイトル部分のスタイル */
+.login_inner-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login_inner-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* フォーム内のスタイル */
+.login_form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 入力フィールドのスタイル */
+.login_input-content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ccc;
+    padding: 5px;
+}
+
+.login_input-content img {
+    margin-right: 10px;
+}
+
+.login_input-item {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.login_input-item::placeholder {
+    color: #aaa;
+}
+
+/* ボタンのスタイル */
+.login_button {
+    text-align: center;
+}
+
+.login_button-submit {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login_button-submit:hover {
+    background-color: #0056b3;
+}

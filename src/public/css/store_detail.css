@@ -1,0 +1,132 @@
+/* 全体のレイアウト */
+.store_detail-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 20px;
+}
+
+.store_deatil {
+    flex: 1;
+}
+
+.store_reservation {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 店舗詳細部分のデザイン */
+.store_detail-inner {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.store_detail-linl {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #007bff;
+    font-size: 24px;
+}
+
+.store_detail-ttl {
+    font-size: 1.8em;
+    margin: 0;
+}
+
+.store_detail-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.store_detail-tag {
+    margin-bottom: 20px;
+}
+
+.store_detail-tag-text {
+    display: inline-block;
+    margin-right: 10px;
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #555;
+}
+
+.store_detail-introduction-text {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* 予約フォームのデザイン */
+.store_reservation-ttl {
+    margin-bottom: 20px;
+}
+
+.store_reservation-ttl-text {
+    font-size: 1.8em;
+    margin: 0;
+}
+
+.store_reservation-date,
+.store_reservation-time,
+.store_reservation-number {
+    margin-bottom: 20px;
+}
+
+.store_reservation-date input,
+.store_reservation-time select,
+.store_reservation-number select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+
+/* 予約内容確認テーブル */
+.store_reservation-confirm table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.store_reservation-confirm th,
+.store_reservation-confirm td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.store_reservation-confirm th {
+    width: 30%;
+    font-weight: bold;
+}
+
+/* 予約ボタン */
+.store_reservation-button-submit {
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+.store_reservation-button-submit:hover {
+    background-color: #0056b3;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 1024px) {
+    .store_detail-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

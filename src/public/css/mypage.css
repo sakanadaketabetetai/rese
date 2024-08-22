@@ -1,0 +1,178 @@
+/* 全体のレイアウト */
+.mypage_content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* セクションの横並びレイアウト */
+.mypage_sections {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* セクション間の間隔 */
+}
+
+/* 各セクション */
+.mypage_reservation,
+.mypage_favorite {
+    flex: 1; /* 各セクションが等しい幅を持つ */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* タイトル */
+.mypage_ttl {
+    margin-bottom: 20px;
+}
+
+.mypage_ttl-text {
+    font-size: 1.8em;
+    margin: 0;
+}
+
+/* 予約状況セクション */
+.mypage_reservation-ttl {
+    margin-bottom: 20px;
+}
+
+.mypage_reservation-text {
+    font-size: 1.6em;
+    margin: 0;
+}
+
+.mypage_reservation-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mypage_reservation-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.mypage_reservation-card-header img {
+    height: 24px;
+    margin-right: 10px;
+}
+
+.mypage_reservation-card-header span {
+    font-weight: bold;
+}
+
+.mypage_reservation-card-header form button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.mypage_reservation-card-header form button img {
+    height: 24px;
+}
+
+/* 予約内容テーブル */
+.mypage_reservation-card-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.mypage_reservation-card-table th,
+.mypage_reservation-card-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.mypage_reservation-card-table th {
+    width: 30%;
+    font-weight: bold;
+}
+
+/* お気に入り店舗セクション */
+.mypage_favorite-ttl {
+    margin-bottom: 20px;
+}
+
+.mypage_favorite-text {
+    font-size: 1.6em;
+    margin: 0;
+}
+
+/* 店舗カード */
+.store_card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.store_card-img {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.store_card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.store_card-ttl {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.store_card-content {
+    padding: 10px;
+}
+
+.store_card-content-tag {
+    display: inline-block;
+    margin-right: 5px;
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #555;
+}
+
+.store_card-button {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.form_button-submit,
+.form_button-submit-favorite {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.form_button-submit:hover,
+.form_button-submit-favorite:hover {
+    background-color: #0056b3;
+}
+
+.form_button-submit-favorite {
+    background-color: #ff6f61;
+}
+
+.form_button-submit-favorite:hover {
+    background-color: #e55e50;
+}

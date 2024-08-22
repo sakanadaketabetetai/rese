@@ -1,0 +1,66 @@
+/* 全体のレイアウト */
+.login_menu-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* 背景に半透明のオーバーレイ */
+}
+
+.login_menu-inner {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
+}
+
+/* メニューリンクのスタイル */
+.login_menu-link {
+    margin-bottom: 20px;
+}
+
+.login_menu-text {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #007BFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    transition: background-color 0.3s ease;
+}
+
+.login_menu-text:hover {
+    background-color: #e0e0e0;
+}
+
+/* 閉じるボタンのスタイル */
+.login_menu-back {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.login_menu-back-link {
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+}
+
+.login_menu-back-link:hover {
+    color: #ff0000;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .login_menu-inner {
+        padding: 20px;
+    }
+
+    .login_menu-text {
+        font-size: 16px;
+    }
+}

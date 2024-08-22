@@ -1,0 +1,151 @@
+/* グリッドレイアウトで店舗一覧を表示 */
+.store_list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4列表示 */
+    gap: 20px; /* 要素間の隙間 */
+}
+
+/* 各店舗カードのスタイル */
+.store_card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* 画像のスタイル */
+.store_card-img {
+    width: 100%;
+    height: 200px; /* 固定の高さ */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.store_card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 画像のサイズをコンテナに収める */
+}
+
+/* 店舗名のスタイル */
+.store_card-ttl {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+/* カードコンテンツのスタイル */
+.store_card-content {
+    padding: 10px;
+}
+
+/* 店舗エリアやジャンルのタグスタイル */
+.store_card-content-tag {
+    display: inline-block;
+    margin-right: 5px;
+    color: #555;
+}
+
+/* ボタンエリアのスタイル */
+.store_card-button {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+/* 通常のボタンのスタイル */
+.form_button-submit {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* ホバースタイル */
+.form_button-submit:hover {
+    background-color: #0056b3;
+}
+
+/* お気に入りボタンのスタイル */
+.form_button-submit-favorite {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* お気に入りボタンのホバースタイル */
+.form_button-submit-favorite:hover {
+    background-color: #cc0000;
+}
+
+/* 検索フォームの全体スタイル */
+.form_search {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* 検索条件（エリア・ジャンル）のドロップダウン */
+.store_list-search select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 150px;
+    background-color: white;
+}
+
+/* キーワード入力エリアのスタイル */
+.store_keyword-input input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 200px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 1024px) {
+    .store_list {
+        grid-template-columns: repeat(3, 1fr); /* タブレットサイズでは3列 */
+    }
+}
+
+@media (max-width: 768px) {
+    .store_list {
+        grid-template-columns: repeat(2, 1fr); /* スマホでは2列 */
+    }
+
+    .form_search {
+        flex-direction: column; /* フォームを縦に並べる */
+        gap: 10px;
+    }
+
+    .store_list-search select,
+    .store_keyword-input input {
+        width: 100%; /* 幅を100%にして横いっぱいに */
+    }
+}
+
+@media (max-width: 480px) {
+    .store_list {
+        grid-template-columns: 1fr; /* スマホの狭い画面では1列表示 */
+    }
+
+    .store_card {
+        text-align: left; /* モバイルでは左寄せ */
+    }
+
+    .store_card-img {
+        height: 150px; /* モバイルでは画像を少し小さく */
+    }
+}
