@@ -1,61 +1,68 @@
 /* ユーザーメニュー全体のレイアウト */
 .user_menu-content {
-    padding: 20px;
-    max-width: 600px;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color:#fff;
 }
 
 /* 戻るリンク */
 .user_menu-back {
-    margin-bottom: 20px;
+    position: absolute;
+    background: #007BFF;
+    padding: 5px 10px;
+    border-radius: 3px;
+    top: 70px;
+    left: 50px;
 }
 
 .user_menu-back-link {
-    font-size: 1.5em;
-    color: #007bff;
+    font-size: 24px;
+    color: white;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .user_menu-back-link:hover {
-    text-decoration: underline;
+    color: #0056b3;
 }
 
 /* メニューアイテムのレイアウト */
 .user_menu-inner {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    background-color: #fff;
+    padding: 40px;
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
 }
 
 /* 各メニューリンク */
 .user_menu-link {
     display: flex;
     align-items: center;
+    margin-bottom: 20px;
     gap: 10px;
 }
 
 /* メニューリンクテキスト */
-.user_menu-text {
-    font-size: 1.2em;
-    color: #333;
-    text-decoration: none;
-}
-
-.user_menu-text:hover {
-    color: #007bff;
-}
-
-/* ログアウトボタン */
+.user_menu-text,
 .user_menu-button {
-    background-color: #dc3545;
-    color: white;
-    border: none;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #007BFF;
     padding: 10px 20px;
     border-radius: 5px;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    border: none;
     cursor: pointer;
-    font-size: 1.1em;
 }
 
+.user_menu-text:hover,
 .user_menu-button:hover {
-    background-color: #c82333;
+    background-color: #e0e0e0;
 }
+

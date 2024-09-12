@@ -6,7 +6,7 @@
     padding: 20px;
 }
 
-.store_deatil {
+.store_detail {
     flex: 1;
 }
 
@@ -74,18 +74,40 @@
 
 .store_reservation-date,
 .store_reservation-time,
-.store_reservation-number {
+.store_reservation-number,
+.reservation_error {
     margin-bottom: 20px;
 }
 
-.store_reservation-date input,
+.store_reservation-date input{
+    width: 100%;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 0px;
+    padding-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    /* font-size: 1.1em; */
+}
+
 .store_reservation-time select,
 .store_reservation-number select {
     width: 100%;
-    padding: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 1.1em;
+}
+
+.reservation_error {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    text-align: center;
 }
 
 /* 予約内容確認テーブル */

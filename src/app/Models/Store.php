@@ -19,4 +19,23 @@ class Store extends Model
                               ->where('store_id', $this->id)
                               ->exists();
     }
+
+    public function reservation()
+    {
+        return $this->hasMany(Reservation::class);
+    
+    }
+    public function favorite_store()
+    {
+        return $this->hasMany(Favorite_store::class);
+    }
+    public function store_reviews()
+    {
+        return $this->hasMany(StoreReview::class);
+    }
+
+    public function store_owner()
+    {
+        return $this->hasMany(Store_owner::class);
+    }
 }

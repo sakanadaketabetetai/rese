@@ -6,6 +6,8 @@ use App\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\JsonResponse;
+use App\Models\User;
 
 class RedirectIfAuthenticated
 {
@@ -23,7 +25,18 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
+                if ($guard == 'admin'){
+                    return redirect(RouteServiceProvider::ADMIN_HOME);
+                }
                 return redirect(RouteServiceProvider::HOME);
+
+                // //ユーザーのロールを取得しその中に[banned]というロールが含まれているかチェック
+                // $is_banned = User::find(Auth::id())->getRoleNames()->contains('banned');
+
+                // return response()->json([
+                //     'login' => true,
+                //     'is_banned' => $is_banned,
+                // ], 200);
             }
         }
 

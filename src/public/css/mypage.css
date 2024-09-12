@@ -1,5 +1,5 @@
 /* 全体のレイアウト */
-.mypage_content {
+.mypage {
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -10,89 +10,127 @@
 .mypage_sections {
     display: flex;
     justify-content: space-between;
-    gap: 20px; /* セクション間の間隔 */
+    gap: 10px; /* セクション間の間隔 */
+}
+
+.mypage_content-info{
+    display: flex;
 }
 
 /* 各セクション */
-.mypage_reservation,
+.mypage_reservations{
+    flex: 1;
+    padding:20px;
+}
 .mypage_favorite {
-    flex: 1; /* 各セクションが等しい幅を持つ */
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    flex: 2; /* 各セクションが等しい幅を持つ */
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mypage_favorite-list{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 /* タイトル */
-.mypage_ttl {
+.mypage_header {
     margin-bottom: 20px;
+    text-align: center;
 }
 
-.mypage_ttl-text {
+.mypage_title {
     font-size: 1.8em;
     margin: 0;
 }
 
 /* 予約状況セクション */
-.mypage_reservation-ttl {
+.mypage_reservations-header {
     margin-bottom: 20px;
 }
 
-.mypage_reservation-text {
+.mypage_reservations-title {
     font-size: 1.6em;
     margin: 0;
 }
 
-.mypage_reservation-card {
+.mypage_reservations-list{
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.mypage_reservation-card-header {
+.reservations-card {
+    display: flex;
+    background-color:#007bff;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 10px;
+    gap: 20px;
+}
+
+.reservation-card_header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+    padding: 10px 10px 0 10px;
 }
 
-.mypage_reservation-card-header img {
+.reservation-card_header img {
     height: 24px;
     margin-right: 10px;
 }
 
-.mypage_reservation-card-header span {
+.reservation-card_header span {
     font-weight: bold;
 }
 
-.mypage_reservation-card-header form button {
+.reservation-card_header form button {
     background: none;
     border: none;
     cursor: pointer;
 }
 
-.mypage_reservation-card-header form button img {
+.reservation-card_header form button img {
     height: 24px;
 }
 
+.reservation-card_title{
+    margin-left: 10px;
+    text-align: left;
+    color: #f9f9f9;
+    flex-grow: 1;
+}
+
 /* 予約内容テーブル */
-.mypage_reservation-card-table table {
+.reservation-card-table table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.mypage_reservation-card-table th,
-.mypage_reservation-card-table td {
-    padding: 10px;
+.reservation-card-table th,
+.reservation-card-table td {
+    padding: 0 20px 0px 30px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    color:#f9f9f9;
 }
 
-.mypage_reservation-card-table th {
+.reservation-card-table th {
     width: 30%;
     font-weight: bold;
+}
+
+.mypage_reservation-store-name{
+    text-align: center;
+}
+
+
+.mypage_reservation-input{
+    width: 200px;
+    border: none;
+    padding: 2px;
+    font-size: 16px;
+    text-align: left;
+    border-radius: 5px;
 }
 
 /* お気に入り店舗セクション */
@@ -139,8 +177,7 @@
 }
 
 .store_card-content-tag {
-    display: inline-block;
-    margin-right: 5px;
+    margin-left: 5px;
     background-color: #f0f0f0;
     padding: 5px 10px;
     border-radius: 5px;
@@ -153,8 +190,7 @@
     margin-top: 10px;
 }
 
-.form_button-submit,
-.form_button-submit-favorite {
+.form_button-submit {
     background-color: #007bff;
     color: white;
     border: none;
@@ -162,17 +198,51 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
+    transition: background-color 0.3s ease;
 }
 
-.form_button-submit:hover,
-.form_button-submit-favorite:hover {
+.form_button-submit-favorite {
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 40px;
+    transition: background-color 0.3s ease;
+}
+
+.mypage_reservation-button{
+    margin: 10px auto;
+    text-align: center;
+}
+
+.mypage_reservation-button-submit {
+    background-color: #ddd;
+    color: #007bff;
+    border: none;
+    margin-top: 5px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form_button-submit:hover {
     background-color: #0056b3;
 }
 
 .form_button-submit-favorite {
-    background-color: #ff6f61;
+    color: #ff0000;
+    border: none;
+    font-size: 40px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .form_button-submit-favorite:hover {
-    background-color: #e55e50;
+    color: #cc0000;
+}
+
+.mypage_reservation-button-submit:hover{
+    background-color: #fdfdfd;
 }

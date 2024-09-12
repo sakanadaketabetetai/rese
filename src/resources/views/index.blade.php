@@ -5,29 +5,42 @@
 @endsection
 
 @section('content')
+@hasanyrole('admin')
+  <p>役割がadminの人だけが見れるよ</p>
+@endhasanyrole
 <div class="store_list-content">
     <div class="form_search">
-        <form action="/search" method="get" id="searchForm">
-            <div class="store_list-search">
-                <select name="store_area" onchange="document.getElementById('searchForm').submit();">
-                    <option value="">All area</option>
-                    @foreach($stores->unique('store_area') as $store)
-                        <option value="{{ $store->store_area }}">{{ $store->store_area }}</option>
-                    @endforeach
-                </select>
-            </div>
-            <div class="store_list-search">
-                <select name="store_genre" onchange="document.getElementById('searchForm').submit();">
-                    <option value="">All genre</option>
-                    @foreach($stores->unique('store_genre') as $store)
-                        <option value="{{ $store->store_genre }}">{{ $store->store_genre }}</option>
-                    @endforeach
-                </select>
-            </div>
-            <div class="store_keyword-input">
-                <input type="text" name="keyword" placeholder="Keyword" oninput="document.getElementById('searchForm').submit();">
-            </div>
-        </form>
+            <table>
+            <form action="/search" method="get" id="searchForm">
+                <tr>
+                    <td>
+                        <div class="store_list-search">
+                            <select name="store_area" onchange="document.getElementById('searchForm').submit();">
+                                <option value="">All area</option>
+                                @foreach($stores->unique('store_area') as $store)
+                                    <option value="{{ $store->store_area }}">{{ $store->store_area }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </td> 
+                    <td>
+                        <div class="store_list-search">
+                            <select name="store_genre" onchange="document.getElementById('searchForm').submit();">
+                                <option value="">All genre</option>
+                                @foreach($stores->unique('store_genre') as $store)
+                                    <option value="{{ $store->store_genre }}">{{ $store->store_genre }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="store_keyword-input">
+                            <input type="text" name="keyword" placeholder="Keyword" oninput="document.getElementById('searchForm').submit();">
+                        </div>
+                    </td>
+                </tr>
+            </form>
+        </table>
     </div>
     <div class="store_list">
         @foreach ($stores as $store)
@@ -52,7 +65,7 @@
                             @if($store->isFavorite())
                                 <button class="form_button-submit-favorite" type="submit">♥</button>
                             @else
-                                <button class="form_button-submit" type="submit">♥</button>
+                                <button class="form_button-submit-heart" type="submit">♥</button>
                             @endif
                         </form>
                     </div>

@@ -1,0 +1,96 @@
+/* 親コンテナ */
+.reservation-detail {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.reservation-detail_content{
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    gap: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+/* テーブル全体 */
+.reservation-detail__table,
+.reservation-detail__form-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+/* ラベルと値のスタイル */
+.reservation-detail__label,
+.reservation-detail__form-label {
+    text-align: left;
+    font-weight: bold;
+    padding: 8px 12px;
+    background-color: #ececec;
+    border-bottom: 1px solid #ddd;
+    width: 30%;
+}
+
+.reservation-detail__value,
+.reservation-detail__form-value {
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* フォームのスタイル */
+.reservation-detail__info,
+.reservation-detail__form {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 入力フィールドのスタイル */
+.reservation-detail__form-input,
+.reservation-detail__form-select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #fff;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+/* セレクトボックス */
+.reservation-detail__form-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20292.4%20292.4%27%3E%3Cpath%20fill%3D%27%23000%27%20d%3D%27M287%2069.8l-14.3-14.3c-5.3-5.3-13.8-5.3-19.1%200L146.2%20163.2%2038.9%2055.5c-5.3-5.3-13.8-5.3-19.1%200L5.5%2069.8c-5.3%205.3-5.3%2013.8%200%2019.1l123.9%20123.9c5.3%205.3%2013.8%205.3%2019.1%200L287%2088.9c5.4-5.3%205.4-13.8%200-19.1z%27/%3E%3C/svg%3E");
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    background-size: 12px;
+}
+
+/* 送信ボタン */
+.reservation-detail__form-button {
+    text-align: center;
+}
+
+.reservation-detail__submit-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reservation-detail__submit-button:hover {
+    background-color: #45a049;
+}

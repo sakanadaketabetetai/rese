@@ -17,7 +17,6 @@ class CreateFavoriteStoresTable extends Migration
             $table->id();
             $table->foreignId('store_id')->constrained()->onDelete('cascade');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->integer('store_score')->default(0);
             $table->timestamps();
         });
     }

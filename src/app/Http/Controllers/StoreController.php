@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Store;
 use App\Models\Favorite_store;
 use App\Models\Reservation;
+use App\Models\StoreReview;
 use Carbon\Carbon;
 
 class StoreController extends Controller
@@ -60,7 +61,6 @@ class StoreController extends Controller
 
     public function favorite(Request $request){
         // リクエストメソッドをログに出力
-        \Log::info('Request Method:', ['method' => $request->method()]);
         $user_id = Auth::id();
         $store_id = $request->input('store_id');
         //userのお気に入りリストからストアを取得
@@ -74,7 +74,6 @@ class StoreController extends Controller
             Favorite_store::create([
                 'store_id' => $store_id,
                 'user_id' => $user_id,
-                'store_score' => 1, //お気に入りを示すスコア
             ]);
         }
         return redirect('/');
@@ -84,38 +83,82 @@ class StoreController extends Controller
         $store = Store::find($id);
         $open_time = Carbon::parse($store->open_time);
         $close_time = Carbon::parse($store->close_time);
+        $store_reviews = StoreReview::where('store_id', $store->id)->get();
 
         //営業時間からドロップダウンを作成(30分毎)
         $times = [];
         for ( $time = $open_time; $time <= $close_time; $time->addMinutes(30)){
             $times[] = $time->format('H:i');
         }
-
+        //最大予約人数からドロップダウンを作成
         $number_of_peoples = [];
         for ($number_of_people = 1; $number_of_people <= $store->max_number_of_people; $number_of_people++) {
             $number_of_peoples[] = $number_of_people;
         }
+        //stars(数値)と同じ数の★を取得し$store_reviews->starsに保存
+        if($store_reviews){
+            $stars_map = [
+                1 => '★',
+                2 => '★★',
+                3 => '★★★',
+                4 => '★★★★',
+                5 => '★★★★★'
+            ];
         
-        return view('store_detail', compact(['store','times','number_of_peoples'])); 
-    }
-
-    public function mypage($id){
-        $user = Auth::user();
-        $reservations = Reservation::where('user_id', $id)->get();
-        $favorite_store_ids = Favorite_store::where('user_id', $id)->pluck('store_id')->toArray();
-        $stores = Store::whereIn('id', $favorite_store_ids)->get();
-    
-        // Storeをstore_idをキーにして配列に変換
-        $storesById = $stores->keyBy('id');
-    
-        // 各予約に対応するstore_nameを割り当てる
-        foreach ($reservations as $reservation) {
-            if (isset($storesById[$reservation->store_id])) {
-                $reservation->store_name = $storesById[$reservation->store_id]->store_name;
+            foreach($store_reviews as $store_review){
+                $store_review->stars = $stars_map[$store_review->stars] ?? $store_review->stars;
             }
         }
-    
-        return view('mypage', compact(['user', 'reservations', 'stores']));
+        
+        return view('store_detail', compact(['store','times','number_of_peoples','store_reviews'])); 
     }
+
+    public function mypage($id) {
+        $user = Auth::user();
+    
+        // ユーザの予約を取得
+        $reservations = Reservation::where('user_id', $id)->get();
+        
+        // 予約の店舗情報を取得
+        $reservation_store_ids = $reservations->pluck('store_id')->unique();
+        $reservation_stores = Store::whereIn('id', $reservation_store_ids)->get();
+        
+        // お気に入り店舗を取得
+        $favorite_store_ids = Favorite_store::where('user_id', $id)->pluck('store_id')->toArray();
+        $favorite_stores = Store::whereIn('id', $favorite_store_ids)->get();
+        
+        // 予約した店舗をIDでマップ化
+        $reservation_storesById = $reservation_stores->keyBy('id');
+    
+        // 予約ごとのstore_idに基づいてstore_nameとドロップダウンデータを割り当てる
+        foreach ($reservations as $reservation) {
+            if (isset($reservation_storesById[$reservation->store_id])) {
+                $store = $reservation_storesById[$reservation->store_id];
+                $reservation->store_name = $store->store_name;
+    
+                // 営業時間に基づいた30分間隔のドロップダウンを生成
+                $times = [];
+                $open_time = Carbon::parse($store->open_time);
+                $close_time = Carbon::parse($store->close_time);
+                for ($time = $open_time; $time <= $close_time; $time->addMinutes(30)) {
+                    $times[] = $time->format('H:i');
+                }
+                $reservation->times = $times;  // 予約ごとにtimesを設定
+    
+                // 最大予約人数に基づいたドロップダウンを生成
+                $number_of_peoples = [];
+                for ($number_of_people = 1; $number_of_people <= $store->max_number_of_people; $number_of_people++) {
+                    $number_of_peoples[] = $number_of_people;
+                }
+                $reservation->number_of_peoples = $number_of_peoples;  // 予約ごとにnumber_of_peoplesを設定
+            }
+        }
+        
+        return view('mypage', compact(['user', 'reservations', 'favorite_stores']));
+    }
+
+    
+
 }
+
 

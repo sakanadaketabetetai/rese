@@ -1,0 +1,25 @@
+/* 全体の基本設定 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 80px;
+    background-color: #fff;
+    color: #333;    
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color:  #fff;
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+    border-radius: 8px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .content {
+        padding: 20px 10px;
+        flex-direction: column;
+    }
+}

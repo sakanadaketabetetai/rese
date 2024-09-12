@@ -1,0 +1,84 @@
+.register_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.register_inner {
+    background-color: #ffffff;
+    padding: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+/* タイトル部分のスタイル */
+.register_inner-title {
+    background-color:#007BFF;
+    padding: 0 auto 30px 10px;
+    margin-bottom: 20px;
+    border-radius: 3px 3px 0px 0px;
+}
+
+.register_inner-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #f9f9f9;
+    margin: 0px 0px;
+    padding:10px 0 10px 20px;
+}
+
+/* フォーム内のスタイル */
+.register_form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 入力フィールドのスタイル */
+.register_input-content {
+    display: flex;
+    align-items: center;
+    margin: 0 20px 5px 20px;
+    padding: 5px;
+}
+
+.register_input-content img {
+    margin-right: 10px;
+}
+
+.register_input-item {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 16px;
+    border-bottom: 2px solid #ccc;
+}
+
+.register_input-item::placeholder {
+    color: #aaa;
+}
+
+/* ボタンのスタイル */
+.register_button {
+    text-align: right;
+    margin:20px 20px 20px auto;
+}
+
+.register_button-submit {
+    background-color: #007BFF;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register_button-submit:hover {
+    background-color: #0056b3;
+}

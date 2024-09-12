@@ -1,10 +1,10 @@
 FROM php:7.4.9-fpm
 
-# #タイムゾーンの設定
-# RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime \
-#   && echo "Asia/Tokyo" > /etc/timezone
+#タイムゾーンの設定
+RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime \
+  && echo "Asia/Tokyo" > /etc/timezone
 
-COPY php.ini /usr/local/etc/php/
+# COPY php.ini /usr/local/etc/php/
 
 # 必要なパッケージのインストールとPHP拡張モジュールのインストール
 RUN apt-get update && apt-get install -y \

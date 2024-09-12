@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         $this->call(StoreSeeder::class);
         $this->call(FavoriteStoreSeeder::class);
+        $this->call(MasterDatabaseSeeder::class);
     }
 }
