@@ -5,9 +5,6 @@
 @endsection
 
 @section('content')
-@hasanyrole('admin')
-  <p>役割がadminの人だけが見れるよ</p>
-@endhasanyrole
 <div class="store_list-content">
     <div class="form_search">
             <table>

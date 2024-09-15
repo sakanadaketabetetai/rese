@@ -5,6 +5,7 @@ use App\Http\Controllers\StoreController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\StoreReviewController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminAnnouncementController;
 use App\Http\Controllers\StoreOwnerController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Spatie\Permission\Middleware\RoleMiddleware;
@@ -29,6 +30,7 @@ Route::middleware(['auth','verified'])->group(function(){
     Route::get('/mypage/{id}',[StoreController::class,'mypage']);
     Route::post('/store/review',[StoreReviewController::class,'store_review']);
     Route::post('/reservation',[ReservationController::class,'reservation_create']);
+    Route::get('/reservation/qr-code/{id}', [ReservationController::class, 'generateQRCode'])->name('reservation_qrcode');
     Route::get('/thanks',[StoreController::class,'thanks']);
     Route::post('/reservation/delete',[ReservationController::class,'reservation_delete']);
     Route::get('/reservation/detail/{id}',[ReservationController::class,'reservation_detail']);
@@ -48,13 +50,19 @@ Route::group(['middleware' => ['auth','role:admin']], function(){
     Route::get('/admin/stores',[AdminController::class, 'admin_stores'])->name('admin.stores.index');
     Route::get('/admin/store_owners',[AdminController::class, 'admin_store_owners'])->name('admin.store.owners');
     Route::post('/admin/add_store_owner',[AdminController::class, 'admin_add_store_owner'])->name('admin.add.store.owner');
+    Route::post('/admin/announcement/create', [AdminAnnouncementController::class, 'announcementMail_create'])->name('admin.announcementMail.create');
+    Route::post('/admin/announcement/send', [AdminAnnouncementController::class, 'announcementMail_send'])->name('admin.announcementMail.send');
 });
 
 Route::group(['middleware' => ['auth','role:store_owner']], function(){
     Route::get('/store_owner', [StoreOwnerController::class, 'store_owner'])->name('store_owner');
     Route::get('/store/info', [StoreOwnerController::class, 'store_info'])->name('store.info');
+    Route::get('/store/info/input', [StoreOwnerController::class, 'store_info_input'])->name('store.info.input');
+    Route::post('/store/info/create', [StoreOwnerController::class, 'store_info_create'])->name('store.info.create');
     Route::post('/store/info/update', [StoreOwnerController::class, 'store_info_update'])->name('store.info.update');
     Route::get('/store/reservation', [StoreOwnerController::class, 'store_reservation'])->name('store.reservation');
+    Route::get('/reservation/show/{id}', [StoreOwnerController::class, 'reservation_show'])->name('reservation.show');
+    Route::post('/reservation/show/checkIn', [StoreOwnerController::class, 'reservation_checkIn'])->name('reservation.checkIn');
 });
 
 

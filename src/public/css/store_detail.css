@@ -25,7 +25,7 @@
     margin-bottom: 20px;
 }
 
-.store_detail-linl {
+.store_detail-link {
     margin-right: 20px;
     text-decoration: none;
     color: #007bff;
@@ -82,8 +82,6 @@
 .store_reservation-date input{
     width: 100%;
     padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 0px;
     padding-bottom: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -101,14 +99,131 @@
     border-radius: 5px;
     font-size: 1.1em;
 }
-
-.reservation_error {
+.reservation_error{
     width: 100%;
-    padding: 10px;
-    border-radius: 5px;
+    color: #d9534f; /* エラーメッセージの赤い色 */
+    font-weight: bold; /* 太字にして強調 */
+    background-color: #f2dede; /* 背景に薄い赤を付ける */
+    border: 1px solid #ebccd1; /* 枠線でエラーメッセージを区切る */
+    padding-top: 10px; /* 内側の余白を追加 */
+    padding-bottom: 10px; /* 内側の余白を追加 */
+    border-radius: 4px; /* 角を少し丸める */
+    margin-top: 5px; /* 上に少し余白を追加 */
     font-size: 1.1em;
     text-align: center;
 }
+
+
+/* Store Review Content Styling */
+.store_review-content {
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.store_review-text {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
+
+.store_review-star {
+    font-size: 1.5rem;
+    color: #ffcc00; /* Star color */
+    font-weight: bold;
+}
+
+.store_review-content label {
+    font-size: 0.9rem;
+    color: #666;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    text-align: right;
+    font-style: italic;
+}
+
+/* Review Form Styling */
+.store-review {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+.store-review__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.store-review__label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.store-review__stars {
+    margin-bottom: 1.5rem;
+}
+
+.store-review__stars-inputs {
+    display: flex;
+    gap: 1rem;
+}
+
+.store-review__star-input {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #ffcc00;
+}
+
+.store-review__star-input input[type="radio"] {
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+.store-review__comment {
+    margin-bottom: 1.5rem;
+}
+
+.store-review__text-area {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    min-height: 100px;
+}
+
+.store-review__submit {
+    text-align: right;
+}
+
+.store-review__submit-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.store-review__submit-button:hover {
+    background-color: #0056b3;
+}
+
 
 /* 予約内容確認テーブル */
 .store_reservation-confirm table {
@@ -150,5 +265,24 @@
     .store_detail-content {
         flex-direction: column;
         gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .store_review-content {
+        padding: 1rem;
+        gap: 0.5rem;
+    }
+
+    .store_review-text {
+        font-size: 1.1rem;
+    }
+
+    .store_review-star {
+        font-size: 1.3rem;
+    }
+
+    .store_review-content label {
+        font-size: 0.8rem;
     }
 }

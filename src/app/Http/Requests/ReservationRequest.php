@@ -59,4 +59,13 @@ class ReservationRequest extends FormRequest
             'number_of_people' => 'required'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'reservation_time.required' => '予約時間を入力してください',
+            'reservation_day.required' => '予約日を入力してください',
+            'number_of_people.required' => '予約人数を入力してください'
+        ];
+    }
 }

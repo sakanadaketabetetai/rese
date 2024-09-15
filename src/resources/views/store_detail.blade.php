@@ -8,7 +8,7 @@
 <div class="store_detail-content">
     <div class="store_detail">
         <div class="store_detail-inner">
-                <a href="/" class="store_detail-linl"><</a>
+                <a href="/" class="store_detail-link"><</a>
                 <h2 class="store_detail-ttl">{{ $store->store_name }}</h2>
         </div>
         <div class="store_detail-img">
@@ -30,34 +30,40 @@
                     <label>{{ $store_review->created_at}} {{ $store_review->user->name}}</label>
                 </div>
                 @endforeach
-                <form action="/store/review" method="POST">
+                <form action="/store/review" method="POST" class="store-review">
                     @csrf
-                    <h3>レビュー投稿</h3>
-                    <h4>スター</h4>
-                    <div class="store_review-star">
-                        <div class="store_review-star-input">
-                            <input type="radio" name="stars" value="5">★★★★★
-                        </div>
-                        <div class="store_review-star-input">
-                            <input type="radio" name="stars" value="4">★★★★
-                        </div>
-                        <div class="store_review-star-input">
-                            <input type="radio" name="stars" value="3">★★★
-                        </div>
-                        <div class="store_review-star-input">
-                            <input type="radio" name="stars" value="2">★★
-                        </div>
-                        <div class="store_review-star-input">
-                            <input type="radio" name="stars" value="1">★
+                    <h3 class="store-review__title">レビュー投稿</h3>
+                    
+                    <div class="store-review__stars">
+                        <h4 class="store-review__label">スター</h4>
+                        <div class="store-review__stars-inputs">
+                            <label class="store-review__star-input">
+                                <input type="radio" name="stars" value="5"> ★★★★★
+                            </label>
+                            <label class="store-review__star-input">
+                                <input type="radio" name="stars" value="4"> ★★★★
+                            </label>
+                            <label class="store-review__star-input">
+                                <input type="radio" name="stars" value="3"> ★★★
+                            </label>
+                            <label class="store-review__star-input">
+                                <input type="radio" name="stars" value="2"> ★★
+                            </label>
+                            <label class="store-review__star-input">
+                                <input type="radio" name="stars" value="1"> ★
+                            </label>
                         </div>
                     </div>
-                    <div class="star_review-comment">
-                        <h4>コメント</h4>
-                        <textarea name="content" class="store_review-text"></textarea>
+                    
+                    <div class="store-review__comment">
+                        <h4 class="store-review__label">コメント</h4>
+                        <textarea name="content" class="store-review__text-area"></textarea>
                     </div>
+                    
                     <input type="hidden" name="store_id" value="{{ $store->id }}">
-                    <div class="store_review-button">
-                        <button type="submit" class="store_review-button-submit">評価する</button>
+                    
+                    <div class="store-review__submit">
+                        <button type="submit" class="store-review__submit-button">評価する</button>
                     </div>
                 </form>
             </div>
@@ -75,7 +81,7 @@
             </div>
             @error('reservation_day')
             <div class="reservation_error">
-                {{$errors->first('reservation_day')}}
+                {{ $message }}
             </div>
             @enderror  
             <div class="store_reservation-time">
@@ -87,7 +93,7 @@
             </div>
             @error('reservation_time')
             <div class="reservation_error">
-                {{$errors->first('reservation_time')}}                
+                {{ $message }}                
             </div>
             @enderror  
             <div class="store_reservation-number">
@@ -99,7 +105,7 @@
             </div>
             @error('number_of_people')
             <div class="reservation_error">
-                {{$errors->first('number_of_people')}}                
+                {{ $message }}                
             </div>
             @enderror  
             <div class="store_reservation-confirm">

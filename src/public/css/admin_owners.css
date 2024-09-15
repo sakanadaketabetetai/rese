@@ -1,0 +1,80 @@
+/* Store Owner Form */
+.store-owner-form {
+    padding: 2rem;
+    background-color: #f9fafb; /* Light background for the form */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.store-owner-form__header {
+    margin-bottom: 1.5rem;
+}
+
+.store-owner-form__title {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+.store-owner-form__body {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.store-owner-form__table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.store-owner-form__row {
+    margin-bottom: 1rem;
+}
+
+.store-owner-form__label {
+    text-align: left;
+    font-weight: bold;
+    padding-right: 1rem;
+    width: 30%;
+    color: #555;
+}
+
+.store-owner-form__input-container {
+    width: 70%;
+}
+
+.store-owner-form__input, 
+.store-owner-form__select {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.store-owner-form__input:focus, 
+.store-owner-form__select:focus {
+    border-color: #3182ce; /* Blue highlight when focused */
+    outline: none;
+}
+
+.store-owner-form__submit-btn {
+    background-color: #3182ce; /* Blue button */
+    color: white;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.store-owner-form__submit-btn:hover {
+    background-color: #2c5282; /* Darker blue on hover */
+}
+
+.store-owner-form__row--submit {
+    text-align: center;
+}

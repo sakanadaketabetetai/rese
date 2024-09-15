@@ -5,8 +5,10 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Store;
 use App\Models\Favorite_store;
 use App\Models\Reservation;
+use App\Models\User;
 use App\Http\Requests\ReservationRequest;
 use Carbon\Carbon;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 use Illuminate\Http\Request;
 
@@ -73,5 +75,17 @@ class ReservationController extends Controller
             $reservation->save();
         }
         return redirect('/'); // Assuming 'index' is the route name
+    }
+
+    public function generateQrCode($id){
+        //予約情報を取得
+        $reservation = Reservation::find($id);
+        $url = route('reservation_qrcode', ['id'=> $reservation->id]);
+
+        //QRコードを生成
+        $qrCode = QrCode::size(300)->generate($url);
+
+        // ビューにQRコードを渡して表示
+        return view('qrcode.reservation_qrcode', compact('qrCode'));
     }
 }

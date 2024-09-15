@@ -22,6 +22,29 @@ class StoreOwnerController extends Controller
         return view('store_owner.store_owner_info', compact('stores'));
     }
 
+    public function store_info_input(){
+        return view('store_owner.store_owner_info_create');
+    }
+
+    public function store_info_create(Request $request){
+        Store::create([
+            'store_name' => $request->store_name,
+            'store_area' => $request->store_area,
+            'store_genre' => $request->store_genre,
+            'store_introduction' => $request->store_introduction,
+            'image' => $request->image,
+            'open_time' => $request->open_time,
+            'close_time' => $request->close_time,
+            'regular_holiday' => $request->regular_holiday,
+            'max_number_of_people' => $request->cmax_number_of_people,
+        ]);
+        return redirect()->route('store.info');
+    }
+
+
+
+
+
     public function store_info_update(Request $request){
         $store = Store::find($request->store_id);
         if($request->store_name){
@@ -69,6 +92,25 @@ class StoreOwnerController extends Controller
                 $reservation->user_name = $reservation->user->name;
             }
             return view('store_owner.store_owner_reservation', compact('reservations'));
+    }
+
+    public function reservation_show($id){
+        $reservation = Reservation::find($id);
+        if(!$reservation){
+            return redirect()->back()->with('error','予約が見つかりません');
+        }
+        return view('qrcode.reservation_show', compact('reservation'));
+    }
+       
+        public function reservation_checkIn(Request $request){
+            $reservation = Reservation::find($request->id);
+            if(!$reservation){
+                return redirect()->back()->with('error','予約が見つかりませんでした');
+            }
+
+            $reservation->status = '1';
+            $reservation->save();
+            return redirect()->back()->with('success','入店処理が完了しました');
     }
 }
     

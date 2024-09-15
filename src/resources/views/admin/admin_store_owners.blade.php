@@ -1,40 +1,40 @@
 @extends('layouts.admin')
 
 @section('css')
-
+    <link rel="stylesheet" href="{{ asset('css/admin_owners.css') }}">
 @endsection
 
 @section('content')
-    <div class="admin-users_content">
-        <div class="admin-users_title">
-            <h1>店舗代表者入力画面</h1>
+    <div class="store-owner-form">
+        <div class="store-owner-form__header">
+            <h1 class="store-owner-form__title">店舗代表者入力画面</h1>
         </div>
-        <div class="admin-users_table">
-            <table>
+        <div class="store-owner-form__body">
+            <table class="store-owner-form__table">
                 <form action="{{ route('admin.add.store.owner') }}" method="post">
                     @csrf
-                    <tr>
-                        <th>店舗代表者氏名</th>
-                        <td>
-                            <input type="text" name="name" placeholder="店舗代表者氏名" value="{{ old('name') }}">
+                    <tr class="store-owner-form__row">
+                        <th class="store-owner-form__label">店舗代表者氏名</th>
+                        <td class="store-owner-form__input-container">
+                            <input type="text" name="name" class="store-owner-form__input" placeholder="店舗代表者氏名" value="{{ old('name') }}">
                         </td>
                     </tr>
-                    <tr>
-                        <th>メールアドレス</th>
-                        <td>
-                            <input type="email" name="email" placeholder="メールアドレス" value="{{ old('email')}}">
+                    <tr class="store-owner-form__row">
+                        <th class="store-owner-form__label">メールアドレス</th>
+                        <td class="store-owner-form__input-container">
+                            <input type="email" name="email" class="store-owner-form__input" placeholder="メールアドレス" value="{{ old('email')}}">
                         </td>
                     </tr>
-                    <tr>
-                        <th>パスワード</th>
-                        <td>
-                            <input type="password" name="password" placeholder="パスワード">
+                    <tr class="store-owner-form__row">
+                        <th class="store-owner-form__label">パスワード</th>
+                        <td class="store-owner-form__input-container">
+                            <input type="password" name="password" class="store-owner-form__input" placeholder="パスワード">
                         </td>
                     </tr>
-                    <tr>
-                        <th>店舗名</th>
-                        <td>
-                            <select name="store_id">
+                    <tr class="store-owner-form__row">
+                        <th class="store-owner-form__label">店舗名</th>
+                        <td class="store-owner-form__input-container">
+                            <select name="store_id" class="store-owner-form__select">
                                 <option></option>
                                 @foreach( $stores as $store )
                                     <option value="{{ $store->id }}">{{ $store->store_name }}</option>
@@ -42,8 +42,10 @@
                             </select>
                         </td>
                     </tr>
-                    <tr>
-                        <button>店舗代表者を追加する</button>
+                    <tr class="store-owner-form__row store-owner-form__row--submit">
+                        <td colspan="2">
+                            <button class="store-owner-form__submit-btn">店舗代表者を追加する</button>
+                        </td>
                     </tr>
                 </form>
             </table>

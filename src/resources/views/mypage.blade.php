@@ -67,6 +67,7 @@
                                     </td>
                                 </tr>
                             </table>
+                            <a href="{{ route('reservation_qrcode', ['id' => $reservation->id]) }}">QRコードを見る</a>
                             <div class="mypage_reservation-button">
                                 <button class="mypage_reservation-button-submit">予約情報</button>
                             </div>

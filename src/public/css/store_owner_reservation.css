@@ -1,0 +1,63 @@
+/* General styling for the reservations section */
+.reservations {
+    width: 100%;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Table styling */
+.reservations__table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* Header row styling */
+.reservations__header {
+    background-color: #f4f4f4;
+}
+
+.reservations__row {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Column titles */
+.reservations__column-title {
+    padding: 12px;
+    font-weight: bold;
+    background-color: #f0f0f0;
+    color: #555;
+    border-bottom: 2px solid #ccc;
+}
+
+/* Table data */
+.reservations__data {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    color: #666;
+}
+
+/* Alternate row background for better readability */
+.reservations__row:nth-child(even) .reservations__data {
+    background-color: #f9f9f9;
+}
+
+/* Hover effect on rows */
+.reservations__row:hover .reservations__data {
+    background-color: #f1f1f1;
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* Responsive design: Table adapts to smaller screen sizes */
+@media (max-width: 768px) {
+    .reservations__table {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .reservations__data, .reservations__column-title {
+        padding: 8px;
+    }
+}

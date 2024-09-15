@@ -14,7 +14,8 @@ RUN apt-get update && apt-get install -y \
   unzip \
   cron \
   supervisor \
-  && docker-php-ext-install pdo_mysql zip
+  libpng-dev \
+  && docker-php-ext-install pdo_mysql zip gd
 
 # PHP 設定ファイルをコピー
 COPY php.ini /usr/local/etc/php/

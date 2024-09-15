@@ -1,0 +1,92 @@
+.announcement-mail {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.announcement-mail__title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.announcement-mail__status {
+    font-size: 16px;
+    color: #28a745;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.announcement-mail__form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.announcement-mail__form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.announcement-mail__label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.announcement-mail__input, 
+.announcement-mail__textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.announcement-mail__input:focus, 
+.announcement-mail__textarea:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.announcement-mail__textarea {
+    resize: vertical;
+}
+
+.announcement-mail__users {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.announcement-mail__user-name {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px 0;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.announcement-mail__submit {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    align-self: center;
+}
+
+.announcement-mail__submit:hover {
+    background-color: #0056b3;
+}

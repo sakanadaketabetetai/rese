@@ -1,0 +1,36 @@
+/* メール本文の全体レイアウト */
+.announcement-email {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* メールコンテンツの中央揃え */
+.announcement-email__container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+}
+
+/* タイトルスタイル */
+.announcement-email__title {
+    font-size: 24px;
+    color: #007bff;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* メール本文のスタイル */
+.announcement-email__content {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #333;
+    white-space: pre-wrap; /* 改行を反映する */
+}
