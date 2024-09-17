@@ -26,6 +26,9 @@ RUN curl -sS https://getcomposer.org/installer | php \
   && mv composer.phar /usr/local/bin/composer \
   && composer self-update
 
+# laravel/cashierをインストール
+RUN composer require laravel/cashier
+
 # crontabファイルをコピー
 COPY crontab /etc/cron.d/laravel-cron
 

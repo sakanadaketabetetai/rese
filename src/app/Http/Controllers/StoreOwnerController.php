@@ -8,6 +8,7 @@ use App\Models\Store_owner;
 use App\Models\Store;
 use App\Models\User;
 use App\Models\Reservation;
+use App\Http\Requests\StoreRequest;
 
 class StoreOwnerController extends Controller
 {
@@ -20,13 +21,13 @@ class StoreOwnerController extends Controller
         $store_owner_ids = Store_owner::where('user_id',$user->id)->pluck('store_id')->toArray();
         $stores = Store::whereIn('id', $store_owner_ids)->get();
         return view('store_owner.store_owner_info', compact('stores'));
-    }
+    } 
 
     public function store_info_input(){
         return view('store_owner.store_owner_info_create');
     }
 
-    public function store_info_create(Request $request){
+    public function store_info_create(StoreRequest $request){
         Store::create([
             'store_name' => $request->store_name,
             'store_area' => $request->store_area,
@@ -36,7 +37,7 @@ class StoreOwnerController extends Controller
             'open_time' => $request->open_time,
             'close_time' => $request->close_time,
             'regular_holiday' => $request->regular_holiday,
-            'max_number_of_people' => $request->cmax_number_of_people,
+            'max_number_of_people' => $request->max_number_of_people,
         ]);
         return redirect()->route('store.info');
     }

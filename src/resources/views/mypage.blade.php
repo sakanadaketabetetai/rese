@@ -67,9 +67,16 @@
                                     </td>
                                 </tr>
                             </table>
-                            <a href="{{ route('reservation_qrcode', ['id' => $reservation->id]) }}">QRコードを見る</a>
-                            <div class="mypage_reservation-button">
-                                <button class="mypage_reservation-button-submit">予約情報</button>
+                            <div class="mypage_reservation-action">
+                                <div class="mypage_reservation-action--link">
+                                    <a href="{{ route('reservation_qrcode', ['id' => $reservation->id]) }}">QRコードを見る</a>
+                                </div>
+                                <div class="mypage_reservation-action--link">
+                                    <a href="{{ route('stripe.index', ['id' => $reservation->id]) }}">支払い画面へ</a>
+                                </div>
+                                <div class="mypage_reservation-button">
+                                    <button class="mypage_reservation-button-submit">予約情報変更画面</button>
+                                </div>
                             </div>
                         </form>
                     </div>

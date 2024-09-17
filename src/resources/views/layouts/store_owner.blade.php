@@ -33,6 +33,7 @@
         </nav>
         <div class="content">
             @yield('content')
+            @yield('scripts')
         </div>
     </div>
 </body>

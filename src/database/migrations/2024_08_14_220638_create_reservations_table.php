@@ -21,6 +21,8 @@ class CreateReservationsTable extends Migration
             $table->date('reservation_day');
             $table->integer('number_of_people')->nullable(false);
             $table->tinyInteger('status')->default(0)->comment('0=予約、1=チェックイン、2=キャンセル');
+            $table->enum('payment_status', ['pending','completed','failed'])->default('pending'); //支払いステータス
+            $table->decimal('amount', 8, 2)->nullable();//支払い金額
             $table->timestamps();
         });
     }

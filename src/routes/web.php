@@ -7,6 +7,7 @@ use App\Http\Controllers\StoreReviewController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminAnnouncementController;
 use App\Http\Controllers\StoreOwnerController;
+use App\Http\Controllers\StripePaymentsController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Spatie\Permission\Middleware\RoleMiddleware;
 use Illuminate\Http\Request;
@@ -21,8 +22,10 @@ use Illuminate\Http\Request;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Auth認証通過後のルーティング
 Route::middleware(['auth','verified'])->group(function(){
     Route::get('/',[StoreController::class,'index']);
+    Route::get('/thanks',[StoreController::class,'thanks']);
     Route::get('/user_menu',[StoreController::class,'user_menu']);
     Route::get('/search',[StoreController::class,'search']);
     Route::post('/favorite_store',[StoreController::class,'favorite']);
@@ -31,22 +34,19 @@ Route::middleware(['auth','verified'])->group(function(){
     Route::post('/store/review',[StoreReviewController::class,'store_review']);
     Route::post('/reservation',[ReservationController::class,'reservation_create']);
     Route::get('/reservation/qr-code/{id}', [ReservationController::class, 'generateQRCode'])->name('reservation_qrcode');
-    Route::get('/thanks',[StoreController::class,'thanks']);
     Route::post('/reservation/delete',[ReservationController::class,'reservation_delete']);
     Route::get('/reservation/detail/{id}',[ReservationController::class,'reservation_detail']);
     Route::post('/reservation/detail/update',[ReservationController::class,'reservation_update']);
+    Route::get('/reservation/stripe/{id}',[StripePaymentsController::class,'stripe_index'])->name('stripe.index');
+    Route::post('/reservation/stripe/payment',[StripePaymentsController::class,'stripe_payment'])->name('stripe.payment');
 });
 
-Route::get('/register_menu',[StoreController::class,'register_menu']);
-Route::get('/login_menu',[StoreController::class,'login_menu']);
-Route::get('/back',[ReservationController::class,'back']);
-
+//管理者(admin)権限でログイン後のルーティング
 Route::group(['middleware' => ['auth','role:admin']], function(){
     Route::get('/admin',[AdminController::class, 'admin_index'])->name('admin');
     Route::get('/admin/users',[AdminController::class, 'admin_users'])->name('admin.users.index');
     Route::post('/admin/users/delete',[AdminController::class, 'admin_user_delete'])->name('admin.user.delete');
     Route::post('/admin/users/role',[AdminController::class, 'admin_user_assignRole'])->name('admin.user.assignRole');
-    Route::post('/admin/users/update',[AdminController::class, 'admin_user_update'])->name('admin.user.update');
     Route::get('/admin/stores',[AdminController::class, 'admin_stores'])->name('admin.stores.index');
     Route::get('/admin/store_owners',[AdminController::class, 'admin_store_owners'])->name('admin.store.owners');
     Route::post('/admin/add_store_owner',[AdminController::class, 'admin_add_store_owner'])->name('admin.add.store.owner');
@@ -54,6 +54,7 @@ Route::group(['middleware' => ['auth','role:admin']], function(){
     Route::post('/admin/announcement/send', [AdminAnnouncementController::class, 'announcementMail_send'])->name('admin.announcementMail.send');
 });
 
+//店舗代表者(store_owner)権限でログイン後のルーティング
 Route::group(['middleware' => ['auth','role:store_owner']], function(){
     Route::get('/store_owner', [StoreOwnerController::class, 'store_owner'])->name('store_owner');
     Route::get('/store/info', [StoreOwnerController::class, 'store_info'])->name('store.info');
@@ -61,11 +62,18 @@ Route::group(['middleware' => ['auth','role:store_owner']], function(){
     Route::post('/store/info/create', [StoreOwnerController::class, 'store_info_create'])->name('store.info.create');
     Route::post('/store/info/update', [StoreOwnerController::class, 'store_info_update'])->name('store.info.update');
     Route::get('/store/reservation', [StoreOwnerController::class, 'store_reservation'])->name('store.reservation');
+    Route::post('/store/reservation/amount/{id}', [StripePaymentsController::class, 'updateReservationAmount'])->name('store.reservation.amount');
     Route::get('/reservation/show/{id}', [StoreOwnerController::class, 'reservation_show'])->name('reservation.show');
     Route::post('/reservation/show/checkIn', [StoreOwnerController::class, 'reservation_checkIn'])->name('reservation.checkIn');
 });
 
+//認証なし
+Route::get('/register_menu',[StoreController::class,'register_menu']);
+Route::get('/login_menu',[StoreController::class,'login_menu']);
+Route::get('/back',[ReservationController::class,'back']);
 
+
+//会員登録後のメール認証処理
 Route::get('/email/verify', function(){
     return view('auth.verify-email');
 })->middleware(['auth'])->name('verification.notice');
