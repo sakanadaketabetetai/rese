@@ -51,9 +51,9 @@
 
 ## ER図
 ### rese er図
-![er](https://github.com/sakanadaketabetetai/rese/issues/1#issue-2540766705)
+![rese](https://github.com/user-attachments/assets/853e169a-0e74-4885-b690-08dc461b74b8)
 ### laravel_permission er図 (laravel Permissionパッケージ)
-![er](https://github.com/sakanadaketabetetai/rese/issues/2#issue-2540767806)
+![laravel_permission](https://github.com/user-attachments/assets/1bc4c69c-6f57-46b9-b784-0edd494ddef3)
 
 ## 環境構築
 
