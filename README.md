@@ -50,7 +50,10 @@
 ![スクリーンショット_3-8-2024_191053_](https://github.com/user-attachments/assets/d9e379aa-1519-40ec-9827-9dad83b0172b)
 
 ## ER図
-![er](https://github.com/user-attachments/assets/69e8d0a2-b269-45a4-93b0-349661ff5e3c)
+### rese er図
+![er](https://github.com/sakanadaketabetetai/rese/issues/2#issue-2540767806)
+### laravel_permission er図 (laravel Permissionパッケージ)
+![er](https://github.com/sakanadaketabetetai/rese/issues/1#issue-2540766705)
 
 ## 環境構築
 
