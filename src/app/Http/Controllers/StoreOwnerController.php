@@ -39,6 +39,12 @@ class StoreOwnerController extends Controller
             'regular_holiday' => $request->regular_holiday,
             'max_number_of_people' => $request->max_number_of_people,
         ]);
+        $create_store_id = Store::where('store_name', $request->store_name)->value('id');
+        Store_owner::create([
+            'user_id' => Auth::id(),
+            'store_id' => $create_store_id,
+        ]);
+
         return redirect()->route('store.info');
     }
 

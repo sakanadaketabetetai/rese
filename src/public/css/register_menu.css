@@ -66,4 +66,55 @@
 .register_menu-button:hover {
     background-color: #e0e0e0;
 }
+/* Tablet view (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .register_menu-text {
+        font-size: 1.6em;
+    }
 
+    .register_menu-back-link {
+        font-size: 22px;
+    }
+
+    .register_menu-content {
+        padding: 15px;
+    }
+}
+
+/* Mobile view (max-width: 768px) */
+@media (max-width: 768px) {
+    .register_menu-content {
+        padding: 10px;
+    }
+
+    .register_menu-text {
+        font-size: 1.4em;
+    }
+
+    .register_menu-back-link {
+        font-size: 20px;
+    }
+
+    .register_menu-inner {
+        gap: 15px;
+    }
+}
+
+/* Small mobile view (max-width: 480px) */
+@media (max-width: 480px) {
+    .register_menu-content {
+        padding: 5px;
+    }
+
+    .register_menu-text {
+        font-size: 1.2em;
+    }
+
+    .register_menu-back-link {
+        font-size: 18px;
+    }
+
+    .register_menu-inner {
+        gap: 10px;
+    }
+}

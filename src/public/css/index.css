@@ -33,7 +33,7 @@
 
 /* 店舗名のスタイル */
 .store_card-ttl {
-    font-size: 1.2em;
+    font-size: 1.2em; 
     margin: 20px 0 10px 0;
     font-weight: bold;
     padding: 0 20px 0 20px;
@@ -163,6 +163,21 @@ select:focus, .store_keyword-input input:focus {
     .store_list {
         grid-template-columns: repeat(3, 1fr); /* タブレットサイズでは3列 */
     }
+    .form_search {
+        flex-direction: column; /* 横並びから縦並びに変更 */
+        margin: 0 0 20px 0; /* 上下の余白を調整 */
+    }
+
+    .store_list-search {
+        width: 100%; /* 横幅を100%に */
+    }
+
+    .store_keyword-input {
+        width: 100%; /* 横幅を100%に */
+    }
+    .form_search select{
+        width:100%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -171,19 +186,19 @@ select:focus, .store_keyword-input input:focus {
     }
 
     .form_search {
-        flex-direction: column;
-        /* gap: 10px; */
+        margin: 0 10px 20px 10px; /* 余白をさらに狭く */
     }
 
-    .store_list-search select,
-    .store_keyword-input input {
-        width: 100%; /* 幅を100%にして横いっぱいに */
+    .store_list-search, .store_keyword-input {
+        width: 100%; /* 検索ボックスの幅を100%にしてモバイルに最適化 */
     }
 
-    /* キーワード入力の高さ調整 */
     .store_keyword-input input {
-        padding: 10px;
-        font-size: 1rem;
+        font-size: 14px; /* テキストサイズを小さく */
+        padding: 8px; /* パディングを少し減らす */
+    }
+    .form_search select{
+        width:100%;
     }
 }
 
@@ -209,4 +224,21 @@ select:focus, .store_keyword-input input:focus {
     .form_button-submit-favorite {
         padding: 8px 16px; /* ボタンのサイズを調整 */
     }
+    .form_search {
+        margin: 0 5px 20px 5px; /* 余白をさらに小さく */
+    }
+
+    .store_list-search, .store_keyword-input {
+        width: 100%; /* 横幅を100%に */
+    }
+
+    .store_keyword-input input {
+        font-size: 14px;
+        padding: 6px; /* モバイルに合わせてさらに小さく */
+    }
+
+    table {
+        width: 100%; /* テーブルの横幅を100%に */
+    }
+
 }

@@ -18,7 +18,7 @@
                 @foreach ( $reservations as $reservation )
                 <div class="reservations-card">
                     <div class="reservation-card_header">
-                        <img src="/storage/images/シンプルな時計アイコン.png">
+                        <img src="/storage/images/シンプルな時計アイコン.png"> 
                         <div class="reservation-card_title">
                             <span>予約 {{ $reservation->numbering }}</span>
                         </div>

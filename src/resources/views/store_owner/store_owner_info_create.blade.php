@@ -18,7 +18,7 @@
                 </tr>
                 @error('store_name')
                 <tr class="store_error">
-                    {{ $message }}
+                    <td colspan="2">{{ $message }}</td>
                 </tr>
                 @enderror
                 <tr class="store-info__row">
@@ -29,7 +29,7 @@
                 </tr>
                 @error('store_area')
                 <tr class="store_error">
-                    {{ $message }}
+                    <td colspan="2">{{ $message }}</td>
                 </tr>
                 @enderror
                 <tr class="store-info__row">
@@ -40,7 +40,7 @@
                 </tr>
                 @error('store_genre')
                 <tr class="store_error">
-                    {{ $message }}
+                    <td colspan="2">{{ $message }}</td>
                 </tr>
                 @enderror
                 <tr class="store-info__row">
@@ -51,7 +51,7 @@
                 </tr>
                 @error('store_introduction')
                 <tr class="store_error">
-                    {{ $message }}
+                    <td colspan="2">{{ $message }}</td>
                 </tr>
                 @enderror
                 <tr class="store-info__row">
@@ -62,7 +62,7 @@
                 </tr>
                 @error('image')
                 <tr class="store_error">
-                    {{ $message }}
+                    <td colspan="2">{{ $message }}</td>
                 </tr>
                 @enderror
                 <tr class="store-info__row">
@@ -73,7 +73,7 @@
                 </tr>
                 @error('open_time')
                 <tr class="store_error">
-                    {{ $message }}
+                    <td colspan="2">{{ $message }}</td>
                 </tr>
                 @enderror
                 <tr class="store-info__row">
@@ -84,7 +84,7 @@
                 </tr>
                 @error('close_time')
                 <tr class="store_error">
-                    {{ $message }}
+                    <td colspan="2">{{ $message }}</td>
                 </tr>
                 @enderror
                 <tr class="store-info__row">
@@ -95,7 +95,7 @@
                 </tr>
                 @error('regular_holiday')
                 <tr class="store_error">
-                    {{ $message }}
+                    <td colspan="2">{{ $message }}</td>
                 </tr>
                 @enderror
                 <tr class="store-info__row">
@@ -106,7 +106,7 @@
                 </tr>
                 @error('max_number_of_people')
                 <tr class="store_error">
-                    {{ $message }}
+                    <td colspan="2">{{ $message }}</td>
                 </tr>
                 @enderror
                 <tr class="store-info__row">

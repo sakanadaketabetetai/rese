@@ -264,3 +264,123 @@
 .mypage_reservation-action--link:hover{
     background-color: #fdfdfd;
 }
+
+/* --- Max-width 1024px --- */
+@media screen and (max-width: 1024px) {
+    .mypage_sections {
+        flex-direction: column;
+        gap: 20px; /* Increase the gap between sections for better readability */
+    }
+    
+    .mypage_favorite-list {
+        grid-template-columns: 1fr; /* Display favorite stores in one column */
+    }
+
+    .reservation-card-table th,
+    .reservation-card-table td {
+        font-size: 14px; /* Adjust font size for table */
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+}
+
+/* --- Max-width 768px --- */
+@media screen and (max-width: 768px) {
+    .mypage {
+        padding: 10px;
+    }
+    
+    .mypage_header {
+        margin-bottom: 15px;
+    }
+
+    .mypage_sections {
+        gap: 15px;
+    }
+
+    .mypage_title {
+        font-size: 1.6em;
+    }
+
+    .mypage_reservations-title, 
+    .mypage_favorite-text {
+        font-size: 1.4em;
+    }
+
+    .reservation-card_header img,
+    .reservation-card_header form button img {
+        height: 20px;
+    }
+
+    .mypage_reservation-input {
+        font-size: 14px;
+        width: 180px;
+    }
+
+    .mypage_reservation-action--link,
+    .mypage_reservation-button-submit {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    .store_card {
+        margin-bottom: 15px;
+    }
+
+    .store_card-ttl {
+        font-size: 1.1em;
+    }
+
+    .form_button-submit, 
+    .form_button-submit-favorite {
+        padding: 8px 15px;
+    }
+}
+
+/* --- Max-width 480px --- */
+@media screen and (max-width: 480px) {
+    .mypage {
+        padding: 5px;
+    }
+
+    .mypage_title {
+        font-size: 1.4em;
+    }
+
+    .mypage_reservations-title, 
+    .mypage_favorite-text {
+        font-size: 1.2em;
+    }
+
+    .mypage_reservation-input {
+        font-size: 12px;
+        width: 150px;
+    }
+
+    .mypage_reservation-action--link,
+    .mypage_reservation-button-submit {
+        padding: 6px 10px;
+        font-size: 0.8em;
+    }
+
+    .reservation-card-table th,
+    .reservation-card-table td {
+        padding: 5px;
+    }
+
+    .store_card-ttl {
+        font-size: 1em;
+    }
+
+    .form_button-submit, 
+    .form_button-submit-favorite {
+        padding: 6px 10px;
+    }
+
+    .store_card-img {
+        height: 150px;
+    }
+
+    .store_card {
+        margin-bottom: 10px;
+    }
+}
