@@ -438,3 +438,58 @@
 2024-09-17 19:45:55,264 INFO spawnerr: can't find command 'npm'
 2024-09-17 19:45:58,268 INFO spawnerr: can't find command 'npm'
 2024-09-17 19:45:58,268 INFO gave up: npm entered FATAL state, too many start retries too quickly
+2024-09-18 20:16:20,230 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-18 20:16:20,235 INFO supervisord started with pid 1
+2024-09-18 20:16:21,237 INFO spawned: 'cron' with pid 9
+2024-09-18 20:16:21,238 INFO spawnerr: can't find command 'npm'
+2024-09-18 20:16:21,239 INFO spawned: 'php-fpm' with pid 10
+2024-09-18 20:16:22,402 INFO success: cron entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-18 20:16:22,402 INFO spawnerr: can't find command 'npm'
+2024-09-18 20:16:22,403 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-18 20:16:24,405 INFO spawnerr: can't find command 'npm'
+2024-09-18 20:16:27,408 INFO spawnerr: can't find command 'npm'
+2024-09-18 20:16:27,409 INFO gave up: npm entered FATAL state, too many start retries too quickly
+2024-09-19 20:24:49,183 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-19 20:24:49,187 INFO supervisord started with pid 1
+2024-09-19 20:24:50,189 INFO spawned: 'cron' with pid 9
+2024-09-19 20:24:50,190 INFO spawnerr: can't find command 'npm'
+2024-09-19 20:24:50,191 INFO spawned: 'php-fpm' with pid 10
+2024-09-19 20:24:51,302 INFO success: cron entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-19 20:24:51,302 INFO spawnerr: can't find command 'npm'
+2024-09-19 20:24:51,302 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-19 20:24:53,444 INFO spawnerr: can't find command 'npm'
+2024-09-19 20:24:56,577 INFO spawnerr: can't find command 'npm'
+2024-09-19 20:24:56,577 INFO gave up: npm entered FATAL state, too many start retries too quickly
+2024-09-20 21:36:38,483 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-20 21:36:38,487 INFO supervisord started with pid 1
+2024-09-20 21:36:39,488 INFO spawned: 'cron' with pid 9
+2024-09-20 21:36:39,490 INFO spawnerr: can't find command 'npm'
+2024-09-20 21:36:39,490 INFO spawned: 'php-fpm' with pid 10
+2024-09-20 21:36:40,601 INFO success: cron entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-20 21:36:40,602 INFO spawnerr: can't find command 'npm'
+2024-09-20 21:36:40,602 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-20 21:36:42,605 INFO spawnerr: can't find command 'npm'
+2024-09-20 21:36:45,609 INFO spawnerr: can't find command 'npm'
+2024-09-20 21:36:45,610 INFO gave up: npm entered FATAL state, too many start retries too quickly
+2024-09-21 21:32:11,046 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-21 21:32:11,050 INFO supervisord started with pid 1
+2024-09-21 21:32:12,051 INFO spawned: 'cron' with pid 9
+2024-09-21 21:32:12,052 INFO spawnerr: can't find command 'npm'
+2024-09-21 21:32:12,053 INFO spawned: 'php-fpm' with pid 10
+2024-09-21 21:32:13,163 INFO success: cron entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-21 21:32:13,164 INFO spawnerr: can't find command 'npm'
+2024-09-21 21:32:13,164 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-21 21:32:15,168 INFO spawnerr: can't find command 'npm'
+2024-09-21 21:32:18,172 INFO spawnerr: can't find command 'npm'
+2024-09-21 21:32:18,172 INFO gave up: npm entered FATAL state, too many start retries too quickly
+2024-09-22 10:24:20,127 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-22 10:24:20,140 INFO supervisord started with pid 1
+2024-09-22 10:24:21,143 INFO spawned: 'cron' with pid 9
+2024-09-22 10:24:21,143 INFO spawnerr: can't find command 'npm'
+2024-09-22 10:24:21,144 INFO spawned: 'php-fpm' with pid 10
+2024-09-22 10:24:22,253 INFO success: cron entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-22 10:24:22,253 INFO spawnerr: can't find command 'npm'
+2024-09-22 10:24:22,253 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-22 10:24:24,256 INFO spawnerr: can't find command 'npm'
+2024-09-22 10:24:27,260 INFO spawnerr: can't find command 'npm'
+2024-09-22 10:24:27,260 INFO gave up: npm entered FATAL state, too many start retries too quickly

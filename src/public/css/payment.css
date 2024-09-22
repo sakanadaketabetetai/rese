@@ -1,0 +1,125 @@
+/* General page styling */
+.payment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+.payment__header-back {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #f8f9fa;
+}
+
+.payment__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #f8f9fa;
+}
+
+.payment__back-link {
+    text-decoration: none;
+    font-size: 24px;
+    color: #333;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.payment__back-link:hover {
+    background-color: #e0e0e0;
+}
+
+.payment__page-title {
+    font-size: 24px;
+    font-weight: 600;
+    background-color: #f8f9fa;
+}
+
+.payment__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px;
+}
+
+.payment__section {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.payment__section-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #444;
+    text-align: center;
+}
+
+.payment__table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.payment__row {
+}
+
+.payment__table-header {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 10px 10px 10px 30px;
+    font-weight: 600;
+    background-color: #f0f0f0;
+    width: 50%;
+}
+
+.payment__data {
+    text-align: left;
+    padding: 5px;
+    width: 70%;
+}
+
+.payment__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.payment__card-element {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.payment__button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.payment__button:hover {
+    background-color: #218838;
+}

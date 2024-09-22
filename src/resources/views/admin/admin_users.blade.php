@@ -72,6 +72,11 @@
                         @endforeach
                     </tbody>
                 </table>
+                @error('selected_users')
+                    <div class="error_message">
+                        {{ $message }}
+                    </div>
+                @enderror
                 <div class="user-list__button-container">
                     <button type="submit" class="user-list__button user-list__button--send">アナウンスメール送信</button>
                 </div>

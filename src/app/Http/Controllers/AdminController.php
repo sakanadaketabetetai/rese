@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Store;
 use App\Models\Store_owner;
+use App\Http\Requests\AddStoreOwnerRequest;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Hash;
 
@@ -58,12 +59,7 @@ class AdminController extends Controller
         return view('admin.admin_store_owners', compact('stores'));
     }
 
-    public function admin_add_store_owner(Request $request){
-        // Validator::make($request->all(), [
-        //     'name' => 'required|string|max:255',
-        //     'email' => 'required|string|email|max:255|unique:users', // emailの重複を防ぐ
-        //     'password' => 'required|string|min:8|confirmed',
-        // ])->validate();
+    public function admin_add_store_owner(AddStoreOwnerRequest $request){
 
         $user = User::create([
             'name' => $request->name,

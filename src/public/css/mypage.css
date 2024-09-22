@@ -132,6 +132,22 @@
     text-align: left;
     border-radius: 5px;
 }
+.mypage_reservation-action--content{
+    display:flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+}
+
+.mypage_reservation-action--link{
+    background-color: #ddd;
+    color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
 
 /* お気に入り店舗セクション */
 .mypage_favorite-ttl {
@@ -223,6 +239,7 @@
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 1em;
     transition: background-color 0.3s ease;
 }
 
@@ -243,6 +260,7 @@
     color: #cc0000;
 }
 
-.mypage_reservation-button-submit:hover{
+.mypage_reservation-button-submit:hover,
+.mypage_reservation-action--link:hover{
     background-color: #fdfdfd;
 }

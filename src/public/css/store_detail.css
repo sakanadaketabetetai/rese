@@ -12,9 +12,12 @@
 
 .store_reservation {
     flex: 1;
+    position: relative;
     border: 1px solid #ddd;
+    background-color: #007bff;
     border-radius: 8px;
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -27,8 +30,12 @@
 
 .store_detail-link {
     margin-right: 20px;
+    background-color:#fff;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
     text-decoration: none;
-    color: #007bff;
+    border-radius: 5px;
+    color: #000;
+    padding: 5px 10px;
     font-size: 24px;
 }
 
@@ -63,12 +70,17 @@
 }
 
 /* 予約フォームのデザイン */
+.store_reservation-form{
+
+}
+
 .store_reservation-ttl {
-    margin-bottom: 20px;
+    margin: 20px;
 }
 
 .store_reservation-ttl-text {
     font-size: 1.8em;
+    color: #ddd;
     margin: 0;
 }
 
@@ -76,13 +88,50 @@
 .store_reservation-time,
 .store_reservation-number,
 .reservation_error {
-    margin-bottom: 20px;
+    margin: 20px;
+}
+
+/* select要素をスタイル */
+
+.select-container {
+    position: relative;
+    width: 200px; /* 必要に応じて幅を調整 */
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: white;
+    appearance: none; /* 多くのブラウザでデフォルトの矢印を削除 */
+    -webkit-appearance: none; /* Safari用 */
+    -moz-appearance: none; /* Firefox用 */
+}
+.select-container::after {
+    content: '▼'; /* 矢印を表示（アイコンや文字に変更可能） */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* 矢印がクリックされないようにする */
+    color: #333;
+}
+
+/* select要素がフォーカスされたときのスタイル */
+select:focus {
+    border-color: #007bff; /* フォーカス時のボーダーカラーを変更 */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* フォーカス時にシャドウを追加 */
+    outline: none; /* デフォルトのアウトラインを削除 */
 }
 
 .store_reservation-date input{
-    width: 100%;
+    width: 40%;
     padding-top: 10px;
     padding-bottom: 10px;
+    padding-left:5px;
+    padding-right:5px;
     border: 1px solid #ddd;
     border-radius: 5px;
     /* font-size: 1.1em; */
@@ -100,7 +149,6 @@
     font-size: 1.1em;
 }
 .reservation_error{
-    width: 100%;
     color: #d9534f; /* エラーメッセージの赤い色 */
     font-weight: bold; /* 太字にして強調 */
     background-color: #f2dede; /* 背景に薄い赤を付ける */
@@ -197,7 +245,7 @@
 }
 
 .store-review__text-area {
-    width: 100%;
+    width: 93%;
     padding: 1rem;
     font-size: 1rem;
     border: 1px solid #ccc;
@@ -214,7 +262,7 @@
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
     color: #fff;
-    background-color: #007bff;
+    background-color: #0739fd;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -227,16 +275,23 @@
 
 /* 予約内容確認テーブル */
 .store_reservation-confirm table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
+    width: 80%;
+    background-color:#629efe;
+    margin: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 5px;
+    
 }
 
 .store_reservation-confirm th,
 .store_reservation-confirm td {
-    padding: 10px;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    color: #ddd;
+
 }
 
 .store_reservation-confirm th {
@@ -247,11 +302,16 @@
 /* 予約ボタン */
 .store_reservation-button-submit {
     width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
     padding: 15px;
-    background-color: #007bff;
+    background-color: #0633e8;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 0px 0px 5px 5px;
     cursor: pointer;
     font-size: 1.1em;
 }

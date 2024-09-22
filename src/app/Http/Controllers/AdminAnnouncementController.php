@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Mail\AnnouncementMail;
 use App\Models\User;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Requests\AdminAnnouncementRequest;
 
 class AdminAnnouncementController extends Controller
 {

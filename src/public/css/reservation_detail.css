@@ -15,6 +15,25 @@
     padding: 20px;
     background-color: #f9f9f9;
 }
+.reservation_header-back{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #f8f9fa;
+}
+.reservation_button-submit{
+    text-decoration: none;
+    font-size: 24px;
+    color: #333;
+    padding: 7px 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
 /* テーブル全体 */
 .reservation-detail__table,
 .reservation-detail__form-table {
@@ -30,15 +49,13 @@
     font-weight: bold;
     padding: 8px 12px;
     background-color: #ececec;
-    border-bottom: 1px solid #ddd;
     width: 30%;
 }
 
 .reservation-detail__value,
 .reservation-detail__form-value {
     text-align: left;
-    padding: 8px 12px;
-    border-bottom: 1px solid #ddd;
+    padding: 15px 12px 15px 20px;
 }
 
 /* フォームのスタイル */
@@ -93,4 +110,8 @@
 
 .reservation-detail__submit-button:hover {
     background-color: #45a049;
+}
+
+.reservation_button-submit:hover {
+    background-color: #ddd;
 }

@@ -4,15 +4,15 @@
 <link rel="stylesheet" href="{{ asset('css/reservation_detail.css') }}">
 @section('content')
 <div class="reservation-detail">
-    <div class="done_button">
+    <div class="reservation_header-back">
         <form action="/mypage/{{ Auth::id() }}" method="get">
             @csrf
-            <button class="done_button-submit">戻る</button>
+            <button class="reservation_button-submit"><</button>
         </form>
     </div>
     <div class="reservation-detail_content">
         <div class="reservation-detail__info">
-            <table class="reservation-detail__table">
+            <table class="reservation-detail__table"> 
                 <tr>
                     <th class="reservation-detail__label">Shop</th>
                     <td class="reservation-detail__value">{{ $store->store_name }}</td>

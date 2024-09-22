@@ -17,7 +17,7 @@ class StoreReviewController extends Controller
         $store_review->content = $request->input('content');
         $store_review->store_id = $request->input('store_id');
         $store_review->user_id = $user_id;
-        $store_review->stars = $request->star;
+        $store_review->stars = $request->stars;
         $store_review->save();
 
         return back();

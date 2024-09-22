@@ -115,6 +115,19 @@
     background-color: #cc1f1a;
 }
 
+.error_message{
+    color: #d9534f; /* エラーメッセージの赤い色 */
+    font-weight: bold; /* 太字にして強調 */
+    background-color: #f2dede; /* 背景に薄い赤を付ける */
+    border: 1px solid #ebccd1; /* 枠線でエラーメッセージを区切る */
+    padding-top: 10px; /* 内側の余白を追加 */
+    padding-bottom: 10px; /* 内側の余白を追加 */
+    border-radius: 4px; /* 角を少し丸める */
+    margin-top: 5px; /* 上に少し余白を追加 */
+    font-size: 1.1em;
+    text-align: center;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .user-list__table-heading, .user-list__table-cell {

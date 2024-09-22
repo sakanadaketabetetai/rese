@@ -18,9 +18,9 @@
                 @foreach ( $reservations as $reservation )
                 <div class="reservations-card">
                     <div class="reservation-card_header">
-                        <img src="/storage/images/シンプルな丸時計のアイコン.png">
+                        <img src="/storage/images/シンプルな時計アイコン.png">
                         <div class="reservation-card_title">
-                            <span>予約</span>
+                            <span>予約 {{ $reservation->numbering }}</span>
                         </div>
                         <form action="/reservation/delete" method="post">
                             @csrf
@@ -36,7 +36,7 @@
                             <table>
                                 <tr>
                                     <th>Shop</th>
-                                    <td class="mypage_reservation-store-name">
+                                    <td class="mypage_reservation-store-name"> 
                                         <div class="mypage_reservation-time">
                                             <p class="mypage_reservation-input">{{ $reservation->store_name}}</p>
                                         </div>
@@ -68,11 +68,13 @@
                                 </tr>
                             </table>
                             <div class="mypage_reservation-action">
-                                <div class="mypage_reservation-action--link">
-                                    <a href="{{ route('reservation_qrcode', ['id' => $reservation->id]) }}">QRコードを見る</a>
-                                </div>
-                                <div class="mypage_reservation-action--link">
-                                    <a href="{{ route('stripe.index', ['id' => $reservation->id]) }}">支払い画面へ</a>
+                                <div class="mypage_reservation-action--content">
+                                    <div class="mypage_reservation-action--link">
+                                        <a href="{{ route('reservation_qrcode', ['id' => $reservation->id]) }}">QRコードを見る</a>
+                                    </div>
+                                    <div class="mypage_reservation-action--link">
+                                        <a href="{{ route('stripe.index', ['id' => $reservation->id]) }}">支払い画面へ</a>
+                                    </div>
                                 </div>
                                 <div class="mypage_reservation-button">
                                     <button class="mypage_reservation-button-submit">予約情報変更画面</button>
@@ -108,6 +110,7 @@
                             <form action="/favorite_store" method="post">
                                 @csrf
                                 <input type="hidden" name="store_id" value="{{ $favorite_store->id }}">
+                                <input type="hidden" name="from" value="mypage"> <!-- お気に入り操作後のリダイレクト先設定に必要なパラメータ-->
                                 @if($favorite_store->isFavorite())
                                     <button class="form_button-submit-favorite" type="submit">♥</button>
                                 @else

@@ -36,16 +36,16 @@ class ReservationController extends Controller
         if ($reservation) {
             // 予約が見つかれば削除
             $reservation->delete();
-            return redirect('/mypage/{{ Auth::id() }}')->with('success', '予約が正常に削除されました');
+            return redirect('/mypage/' . Auth::id())->with('success', '予約が正常に削除されました');
         } else {
             // 予約が見つからなければエラーメッセージを返す
-            return redirect('/')->with('error', '予約が見つかりませんでした');
+            return redirect('/')->with('error', '予約が見つかりませんでした'); 
         }
     }
 
     public function back(){
         return redirect('/');
-    }
+    } 
 
     public function reservation_detail($id){
         $reservation = Reservation::find($id);
@@ -81,11 +81,10 @@ class ReservationController extends Controller
         //予約情報を取得
         $reservation = Reservation::find($id);
         $url = route('reservation_qrcode', ['id'=> $reservation->id]);
-
         //QRコードを生成
         $qrCode = QrCode::size(300)->generate($url);
 
         // ビューにQRコードを渡して表示
-        return view('qrcode.reservation_qrcode', compact('qrCode'));
+        return view('qrcode.reservation_qrcode', compact(['qrCode'])); 
     }
 }

@@ -27,7 +27,7 @@ Route::middleware(['auth','verified'])->group(function(){
     Route::get('/',[StoreController::class,'index']);
     Route::get('/thanks',[StoreController::class,'thanks']);
     Route::get('/user_menu',[StoreController::class,'user_menu']);
-    Route::get('/search',[StoreController::class,'search']);
+    Route::get('/search',[StoreController::class,'search']); 
     Route::post('/favorite_store',[StoreController::class,'favorite']);
     Route::get('/detail/{id}',[StoreController::class,'store_detail']);
     Route::get('/mypage/{id}',[StoreController::class,'mypage']);

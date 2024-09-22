@@ -59,6 +59,7 @@
                         <form action="/favorite_store" method="post">
                             @csrf
                             <input type="hidden" name="store_id" value="{{ $store->id }}">
+                            <input type="hidden" name="from" value="index"> <!-- お気に入り操作後のリダイレクト先設定に必要なパラメータ-->
                             @if($store->isFavorite())
                                 <button class="form_button-submit-favorite" type="submit">♥</button>
                             @else

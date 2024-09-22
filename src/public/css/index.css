@@ -8,7 +8,7 @@
 /* 各店舗カードのスタイル */
 .store_card {
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 8px; 
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -113,30 +113,45 @@
     margin: 0 18px 20px 0;
 }
 
-tr{
-    border-spacing: 0;
+.form_search table {
+    border-spacing: 0; /* 隙間をなくす */
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 4px 4px 8px rgb(0,0,0,0.7);
+}
+
+.form_search td {
+    padding: 0; /* セル内の余白をなくす */
+    margin: 0;  /* セル外の余白をなくす */
 }
 
 .store_list-search {
-    flex: 1;
+    width: 20%;
 }
 
 .store_keyword-input {
     flex: 2;
-    border: 1px solid #ddd;
     border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
     background-color: white;
 }
 
-select, .store_keyword-input input {
+.store_keyword-input input {
     width: 100%; /* 幅を100%に設定 */
-    padding: 8px;
+    padding: 10px;
     font-size: 16px;
-    border: 1px solid #ddd;
+    border: none; /* ボーダーをなくす */
     border-radius: 5px;
     outline: none;
     transition: border-color 0.3s;
+}
+
+select{
+    border:none;
+    padding-right: 8px;
+    padding-left: 5px;
+    border-right: solid 1px #ddd;
 }
 
 select:focus, .store_keyword-input input:focus {

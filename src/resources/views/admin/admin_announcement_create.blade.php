@@ -17,15 +17,30 @@
                     <span class="announcement-mail__user-name">{{ $user->name }}</span>
                 @endforeach
             </div>
+            @error('user_ids')
+            <div class="error_message">
+                {{ $message }}
+            </div>
+            @enderror
         </div>
         <div class="announcement-mail__form-group">
             <label for="subject" class="announcement-mail__label">件名</label>
             <input type="text" name="subject" id="subject" class="announcement-mail__input" required>
         </div>
+            @error('subject')
+            <div class="error_message">
+                {{ $message }}
+            </div>
+            @enderror
         <div class="announcement-mail__form-group">
             <label for="content" class="announcement-mail__label">内容</label>
             <textarea name="content" id="content" class="announcement-mail__textarea" rows="5"></textarea>
         </div>
+            @error('content')
+            <div class="error_message">
+                {{ $message }}
+            </div>
+            @enderror
         <div class="announcement-mail__form-group">
             <button type="submit" class="announcement-mail__submit">送信</button>
         </div>

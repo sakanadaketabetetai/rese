@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('css')
-
+    <link rel="stylesheet" href="{{ asset('css/done.css') }}">
 @endsection
-@section('content')
 
+@section('content')
 <div class="done_content">
     <div class="done_content-inner">
         <h2 class="done_content-text">ご予約ありがとうございます</h2>

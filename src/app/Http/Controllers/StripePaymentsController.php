@@ -8,6 +8,7 @@ use Stripe\Customer;
 use Stripe\Charge;
 use Exception;
 use App\Models\Reservation;
+use App\Models\Store;
 
 class StripePaymentsController extends Controller
 {
@@ -27,7 +28,8 @@ class StripePaymentsController extends Controller
 
     public function stripe_index($id){
         $reservation = Reservation::find($id);
-        return view('stripe.stripe', compact('reservation'));
+        $store_name = Store::find($reservation->store_id)->value('store_name');
+        return view('stripe.stripe', compact(['reservation','store_name']));
     }
 
     public function stripe_payment(Request $request)
@@ -52,14 +54,11 @@ class StripePaymentsController extends Controller
                 'currency' => 'jpy', // 通貨(日本円)
             ]);
     
-            return redirect()->route('stripe.complete')->with('success', '支払いが成功しました。');
+            return redirect()->route('stripe.complete');
         } catch (\Exception $e) {
             return back()->withErrors(['message' => '支払いに失敗しました: ' . $e->getMessage()]);
         }
     }
     
 
-    public function complete(){
-        return view('stripe.complete');
-    }
 }

@@ -76,7 +76,13 @@ class StoreController extends Controller
                 'user_id' => $user_id,
             ]);
         }
-        return redirect('/');
+        // クエリパラメータからリダイレクト先を判別
+        $from = $request->from;  // デフォルトは'mypage'
+        if ($from === 'index') {
+            return redirect('/')->with('success', 'お気に入りが更新されました');
+        } else {
+            return redirect('/mypage/' . Auth::id())->with('success', 'お気に入りが更新されました');
+        }
     }
     
     public function store_detail($id){
@@ -117,7 +123,9 @@ class StoreController extends Controller
         $user = Auth::user();
     
         // ユーザの予約を取得
-        $reservations = Reservation::where('user_id', $id)->get();
+        $reservations = Reservation::where('user_id', $id)
+                                    ->where('status',0) //statusが予約中のものだけを取得
+                                    ->get();
         
         // 予約の店舗情報を取得
         $reservation_store_ids = $reservations->pluck('store_id')->unique();
@@ -131,7 +139,13 @@ class StoreController extends Controller
         $reservation_storesById = $reservation_stores->keyBy('id');
     
         // 予約ごとのstore_idに基づいてstore_nameとドロップダウンデータを割り当てる
+        $counter = 1;
+       
         foreach ($reservations as $reservation) {
+            //各予約にナンバリング用カウンターを追加
+            $reservation->numbering = $counter;
+            $counter++; //カウンターをインクリメント
+            
             if (isset($reservation_storesById[$reservation->store_id])) {
                 $store = $reservation_storesById[$reservation->store_id];
                 $reservation->store_name = $store->store_name;

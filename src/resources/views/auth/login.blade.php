@@ -17,10 +17,18 @@
                     <img src="/storage/images/icon_112180_16.png" alt="">
                     <input type="email" name="email" class="login_input-item" value="{{ old('email') }}" placeholder="Email">
                 </div>
+                <!-- バリデーションエラーメッセージ -->
+                @error('email')
+                    <div class="error_message">{{ $message }}</div>
+                @enderror
                 <div class="login_input-content">
                     <img src="/storage/images/icon_158130_16.png" alt="">
                     <input type="password" name="password" class="login_input-item" placeholder="Password">
                 </div>
+                <!-- バリデーションエラーメッセージ  -->
+                @error('password')
+                    <div class="error_message">{{ $message }}</div>
+                @enderror
                 <div class="login_button">
                     <button class="login_button-submit">ログイン</button>
                 </div>
