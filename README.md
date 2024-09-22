@@ -47,7 +47,10 @@
 - ユーザーフレンドリーなインターフェース
 
 ## テーブル設計
-![スクリーンショット_3-8-2024_191053_](https://github.com/user-attachments/assets/d9e379aa-1519-40ec-9827-9dad83b0172b)
+###rese table図
+![rese_table](https://github.com/user-attachments/assets/06ea522e-53ea-4a97-a6bc-2913d48805fa)
+###laravel_permission table図
+![laravel_permission_table](https://github.com/user-attachments/assets/b63996ad-be02-4351-a1db-3df76a350579)
 
 ## ER図
 ### rese er図
