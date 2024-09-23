@@ -103,14 +103,14 @@
     メールに関する設定
     ※下の変数設定はMailCatcherを使用する場合の設定であり、自身のメールアドレスを使用する場合は、必要に応じて設定値を変更する
     ```bash
-    MAIL_MAILER=smtp
-    MAIL_HOST=mailcatcher  //自身のメールサーバーを入力 
-    MAIL_PORT=1025 //使用するポートを入力
-    MAIL_USERNAME=null //自身のメールアドレス
-    MAIL_PASSWORD=null //自身のメールサーバーにアクセスするパスワード
-    MAIL_ENCRYPTION=null //ssl
-    MAIL_FROM_ADDRESS=no-reply@example.com //自身のメールアドレス
-    MAIL_FROM_NAME="${APP_NAME}"
+    MAIL_MAILER=smtp　　　　//メールドライバー
+    MAIL_HOST=mailcatcher  //SMTPメールサーバーのホスト名を入力 
+    MAIL_PORT=1025 //SMTPサーバーのポート番号を入力
+    MAIL_USERNAME=null //SMTPサーバーにログインするために使用するユーザー名を入力
+    MAIL_PASSWORD=null //SMTPサーバーにログインするために使用するパスワードを入力
+    MAIL_ENCRYPTION=null //SMTPサーバーとの通信を暗号化
+    MAIL_FROM_ADDRESS=no-reply@example.com //送信元のメールアドレス
+    MAIL_FROM_NAME="${APP_NAME}" //送信者名
     ```
     APP環境
     ```bash
