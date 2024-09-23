@@ -13,8 +13,6 @@
 - MailCatcherのURL : http://localhost:1080    
   ※awsデプロイした場合、http://AWSパブリックIPv4アドレス:1080
 ### 参考URL(awsにデプロイ)
-- ReseのURL : http://13.114.104.147
-- MailCatcherのURL : http://13.114.104.147:1080
 
 ## GitHubのリポジトリ
 - https://github.com/sakanadaketabetetai/rese.git
