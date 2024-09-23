@@ -125,6 +125,7 @@ class StoreController extends Controller
         // ユーザの予約を取得
         $reservations = Reservation::where('user_id', $id)
                                     ->where('status',0) //statusが予約中のものだけを取得
+                                    ->where('payment_status','pending') //payment_statusが支払いが完了していないものだけを取得
                                     ->get();
         
         // 予約の店舗情報を取得

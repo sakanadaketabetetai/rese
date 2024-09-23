@@ -20,6 +20,14 @@ class StoreOwnerController extends Controller
         $user = Auth::user();
         $store_owner_ids = Store_owner::where('user_id',$user->id)->pluck('store_id')->toArray();
         $stores = Store::whereIn('id', $store_owner_ids)->get();
+
+        $counter = 1;
+        foreach ($stores as $store){
+            //各店舗情報にナンバリング用カウンターを追加
+            $store->numbering = $counter;
+            $counter++; //カウンター用のインクリメント
+        }
+
         return view('store_owner.store_owner_info', compact('stores'));
     } 
 
@@ -117,7 +125,7 @@ class StoreOwnerController extends Controller
 
             $reservation->status = '1';
             $reservation->save();
-            return redirect()->back()->with('success','入店処理が完了しました');
+            return view('qrcode.reservation_checkin');
     }
 }
     

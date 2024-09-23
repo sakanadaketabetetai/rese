@@ -7,7 +7,11 @@
 
 @section('content')
 <div class="store-management">
-    @foreach($stores as $store)
+    @foreach($stores as $store) 
+    <div class="store-management__info">
+        <div class="store-management__info-title">
+            <h2>店舗情報 {{ $store->numbering }}</h2>
+        </div>
         <div class="store-management__view">
             <table class="store-management__table">
                 <tr class="store-management__row">
@@ -48,7 +52,6 @@
                 </tr>
             </table>
         </div>
-
         <div class="store-management__edit">
             <div class="store-management__edit-title">
                 <h3 class="store-management__edit-text">店舗情報更新フォーム</h3>
@@ -121,6 +124,7 @@
                 </table>
             </form>
         </div>
+    </div>
     @endforeach
 </div>
 @endsection

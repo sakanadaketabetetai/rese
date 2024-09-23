@@ -1,0 +1,68 @@
+/* ページ全体のスタイル */
+.checkin-complete {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f7fa;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* コンテナ */
+.checkin-complete__container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+/* 完了アイコン */
+.checkin-complete__icon-container {
+    background-color: #2ecc71;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+}
+
+.checkin-complete__icon {
+    font-size: 48px;
+    color: white;
+}
+
+/* タイトル */
+.checkin-complete__title {
+    font-size: 30px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* メッセージ */
+.checkin-complete__message {
+    font-size: 18px;
+    color: #7f8c8d;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* ホームに戻るボタン */
+.checkin-complete__home-link {
+    font-size: 18px;
+    color: #3498db;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid #3498db;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.checkin-complete__home-link:hover {
+    background-color: #3498db;
+    color: white;
+}

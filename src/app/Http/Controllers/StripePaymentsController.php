@@ -34,6 +34,7 @@ class StripePaymentsController extends Controller
 
     public function stripe_payment(Request $request)
     {
+        $reservation = Reservation::findOrFail($request->reservation_id);
         try {
             // Stripe APIキーを設定
             Stripe::setApiKey(env('STRIPE_SECRET'));
@@ -51,10 +52,14 @@ class StripePaymentsController extends Controller
             $charge = Charge::create([
                 'customer' => $customer->id,
                 'amount' => (int) $request->input('amount'), // 金額を整数に変換し、セントに変換
-                'currency' => 'jpy', // 通貨(日本円)
+                'currency' => 'jpy', // 通貨(日本円)　
+            ]);
+
+            $reservation->update([
+                'payment_status' => 'completed'
             ]);
     
-            return redirect()->route('stripe.complete');
+            return view('stripe.complete');
         } catch (\Exception $e) {
             return back()->withErrors(['message' => '支払いに失敗しました: ' . $e->getMessage()]);
         }

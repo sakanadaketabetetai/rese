@@ -40,12 +40,12 @@
             <form action="{{ route('stripe.payment') }}" method="post" id="payment-form" class="payment__form">
                 @csrf
                 <input type="hidden" name="amount" value="{{ $reservation->amount }}">
+                <input type="hidden" name="reservation_id" value="{{ $reservation->id }}">
                 <div id="card-element" class="payment__card-element"></div>
                 <button type="submit" class="payment__button">支払い</button>
             </form>
         </div>
     </div>
-
     <script src="https://js.stripe.com/v3/"></script>
     <script>
         var stripe = Stripe('{{ env('STRIPE_KEY') }}');

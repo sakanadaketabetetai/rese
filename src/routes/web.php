@@ -40,7 +40,7 @@ Route::middleware(['auth','verified'])->group(function(){
     Route::get('/reservation/stripe/{id}',[StripePaymentsController::class,'stripe_index'])->name('stripe.index');
     Route::post('/reservation/stripe/payment',[StripePaymentsController::class,'stripe_payment'])->name('stripe.payment');
 });
-
+ 
 //管理者(admin)権限でログイン後のルーティング
 Route::group(['middleware' => ['auth','role:admin']], function(){
     Route::get('/admin',[AdminController::class, 'admin_index'])->name('admin');
@@ -63,8 +63,8 @@ Route::group(['middleware' => ['auth','role:store_owner']], function(){
     Route::post('/store/info/update', [StoreOwnerController::class, 'store_info_update'])->name('store.info.update');
     Route::get('/store/reservation', [StoreOwnerController::class, 'store_reservation'])->name('store.reservation');
     Route::post('/store/reservation/amount/{id}', [StripePaymentsController::class, 'updateReservationAmount'])->name('store.reservation.amount');
-    Route::get('/reservation/show/{id}', [StoreOwnerController::class, 'reservation_show'])->name('reservation.show');
-    Route::post('/reservation/show/checkIn', [StoreOwnerController::class, 'reservation_checkIn'])->name('reservation.checkIn');
+    Route::get('/store/reservation/show/{id}', [StoreOwnerController::class, 'reservation_show'])->name('reservation.show');
+    Route::post('/store/reservation/show/checkIn', [StoreOwnerController::class, 'reservation_checkIn'])->name('reservation.checkIn');
 });
 
 //認証なし

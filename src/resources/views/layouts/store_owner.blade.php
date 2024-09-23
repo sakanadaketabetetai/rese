@@ -26,7 +26,7 @@
                     <a class="sidebar__menu-link" href="{{ route('store.info.input') }}">店舗情報作成</a>
                 </li>
                 <li class="sidebar__menu-item">
-                    <a class="sidebar__menu-link" href="/back">home</a>
+                    <a class="sidebar__menu-link" href="/back">ホーム画面</a>
                 </li>
                 @endrole
             </ul>
