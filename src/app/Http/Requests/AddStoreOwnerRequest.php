@@ -27,7 +27,7 @@ class AddStoreOwnerRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', new Password, 'confirmed'],
+            'password' => ['required', 'string', new Password],
             'store_id' => 'required',
         ];
     }
@@ -49,7 +49,6 @@ class AddStoreOwnerRequest extends FormRequest
             'email.email' => '店舗代表者のメールアドレスはメールアドレス形式で入力してください。',
             'password.required' => '店舗代表者のパスワードは必須項目です。',
             'password.string' => '店舗代表者のパスワードは文字列で入力してください。',
-            'password.confirmed' => 'パスワード確認が一致しません',
             'store_id.required' => '店舗名を選択してください。',
         ];
     }
