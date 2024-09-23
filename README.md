@@ -8,8 +8,8 @@
 外部の飲食店予約サービスは手数料を取られるので自社で予約サービスを持ちたい。
 
 ## アプリケーションURL
-- ReseのURL : http://localhost    ※awsデプロイした場合は、http://AWSパブリックIPv4アドレス
-- MailCatcherのURL : http://localhost:1080    ※awsデプロイした場合、http://AWSパブリックIPv4アドレス:1080
+- ReseのURL : http://13.114.104.147 
+- MailCatcherのURL : http://13.114.104.147:1080    
 
 ## GitHubのリポジトリ
 - https://github.com/sakanadaketabetetai/rese.git
